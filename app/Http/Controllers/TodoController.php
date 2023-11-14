@@ -10,7 +10,8 @@ class TodoController extends Controller
     
     
     public function getMyTodos(){
-        $todos = Todo::where('user_id', '=', Auth::id())-get();
+        // $todos = Todo::where('user_id', '=', Auth::id())-get();
+        $todos = Auth::user()->todos;
 
         return view('todos.insdex', [
             'todos' => $todos
