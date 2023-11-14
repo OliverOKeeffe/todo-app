@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource('todos', TodoController::class);
+Route::get('/todos/mine', [TodoController::class, 'getMyTodos']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
